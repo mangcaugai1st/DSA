@@ -16,3 +16,30 @@
       return nums[nums.Length - 1];
     }
 #+END_SRC 
+
+** Hash Map
+#+BEGIN_SRC csharp
+    public int SingleNumber(int[] nums) 
+    {
+      Dictionary<int, int> map = new Dictionary<int, int>();
+      for (int i = 0; i < nums.Length; i++)
+      {
+        if (!map.ContainsKey(nums[i]))
+        {
+          map.Add(nums[i], 1);
+        }
+        else
+        {
+          map[nums[i]] += 1;
+        }
+      }
+      foreach(KeyValuePair<int, int> kvp in map)
+      {
+        if (kvp.Value == 1)
+        {
+          return kvp.Key;
+        }
+      }
+      return -1;
+    }
+#+END_SRC
