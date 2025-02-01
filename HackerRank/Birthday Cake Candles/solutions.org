@@ -1,0 +1,20 @@
+* C++ 
+#+BEGIN_SRC c
+  #include <algorithm>
+
+  int birthdayCakeCandles(vector<int> candles)
+  {
+    int count = 0;
+    auto maxHeight = max_element(candles.begin(), candles.end()); // trả về địa chỉ của con trỏ
+
+    for (const auto& candle: candles)
+    {
+      if (candle == *maxHeight)
+      {
+        count++;
+      }
+    }
+
+    return count;
+  }
+#+END_SRC

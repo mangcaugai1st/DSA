@@ -1,0 +1,164 @@
+- Quy tắc:
+  + 00:00 -> 11:00 (12:00 AM -> 11:00 AM)
+  + 12:00 -> 23:00 (12:00 PM -> 11:00 PM)
+* C++
+#+BEGIN_SRC c
+string timeConversion(string s)
+{
+  string getAMorPM = s.substr(s.size() -2);
+  string getHour = s.substr(0,2);
+
+  if (getAMorPM == "PM")
+  {
+    if (getHour == "12")
+    {
+      s[0] = '1';
+      s[1] = '2';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "01")
+    {
+      s[0] = '1';
+      s[1] = '3';     
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "02")
+    {
+      s[0] = '1';
+      s[1] = '4';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "03")
+    {
+      s[0] = '1';
+      s[1] = '5';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "04")
+    {
+      s[0] = '1';
+      s[1] = '6';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "05")
+    {
+      s[0] = '1';
+      s[1] = '7';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "06")
+    {
+      s[0] = '1';
+      s[1] = '8';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "07")
+    {
+      s[0] = '1';
+      s[1] = '9';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "08")
+    {
+      s[0] = '2';
+      s[1] = '0';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "09")
+    { 
+      s[0] = '2';
+      s[1] = '1';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "10")
+    {
+      s[0] = '2';
+      s[1] = '2';
+      s.erase(s.size() - 2);
+    }
+    if (getHour == "11")
+    {
+      s[0] = '2';
+      s[1] = '3';
+      s.erase(s.size() - 2);
+    }
+  }
+  else if (getAMorPM == "AM")
+  {
+    if (getHour == "12")
+    {
+      s[0] = '0';
+      s[1] = '0';
+      s.erase(s.size() - 2);     
+    }
+    if (getHour == "01")
+    {
+      s[0] = '0';
+      s[1] = '1'; 
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "02")
+    {
+      s[0] = '0';
+      s[1] = '2';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "03")
+    {
+      s[0] = '0';
+      s[1] = '3';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "04")
+    {
+      s[0] = '0';
+      s[1] = '4';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "05")
+    {
+      s[0] = '0';
+      s[1] = '5';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "06")
+    {
+      s[0] = '0';
+      s[1] = '6';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "07")
+    {
+      s[0] = '0';
+      s[1] = '7';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "08")
+    {
+      s[0] = '0';
+      s[1] = '8';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "09")
+    {
+      s[0] = '0';
+      s[1] = '9';
+      s.erase(s.size() - 2);     
+    }     
+    if (getHour == "10")
+    {
+      s[0] = '1';
+      s[1] = '0';
+      s.erase(s.size() - 2);     
+    }   
+    if (getHour == "11")
+    {
+      s[0] = '1';
+      s[1] = '1';
+      s.erase(s.size() - 2);     
+    }   
+  }
+
+  return s;
+}
+#+END_SRC
