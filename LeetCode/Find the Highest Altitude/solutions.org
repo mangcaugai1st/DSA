@@ -1,0 +1,37 @@
+* c++ 
+#+BEGIN_SRC cpp
+class Solution {
+public: 
+  int largesAltitude(vector<int>& gain)
+  {
+    gain.insert(gain.begin(), 0); //  Thêm 0 vào đầu vector gain
+    vector<int> prefixSum(gain.size(), 0); // Khởi tạo kích thước prefixSum = kích thước của gain
+    prefixSum[0] = 0;
+
+    for (int i = 1; i < gain.size(); i++)
+    {
+      prefixSum[i] = prefixSum[i - 1] + gain[i];
+    }
+
+    return *max_element(prefixSum.begin(), prefixSum.end());
+  }
+}; 
+#+END_SRC
+
+#+BEGIN_SRC cpp
+class Solution {
+public: 
+  int largesAltitude(vector<int>& gain)
+  {
+    vector<int> prefixSum(gain.size() + 1);
+    prefixSum[0] = 0;
+
+    for (int i = 1; i <= gain.size(); i++)
+    {
+      prefixSum[i] = prefixSum[i - 1] + gain[i - 1];
+    }
+
+    return *max_element(prefixSum.begin(), prefixSum.end());
+  }
+};
+#+END_SRC
